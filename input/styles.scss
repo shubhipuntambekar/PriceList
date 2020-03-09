@@ -1,0 +1,253 @@
+@import "colors";
+@import "fonts";
+
+*{
+    box-sizing: border-box;
+    font-family: $family-primary;
+}
+body{
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    .section-1{
+        font-family: $family-header;
+        background-image: url(../top_background.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        color: $font-extra-light;
+        text-align: center;
+        padding: 2% 5% 5% 5%;
+    }
+    .section-2{
+        .price-box-container{
+            background: $background-light;
+            display: flex;
+            text-align: center;
+            border-bottom: 1px solid #dcdcdc;
+            padding-bottom:70px;
+            padding-left: 110px;
+            .price-box{
+                background-color: white;
+                margin: 1%;
+                margin-top: -2%;
+                border-radius: 10px;
+                width: 28%;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+                .heading{
+                    background: $background-dark;
+                    color: $font-extra-light;
+                    border-bottom: 3px solid $underline;
+                    padding: 14px 20px;
+                    font-size: 1.2rem;
+                    border-radius: 8px 8px 0px 0px;
+                }
+                .heading-pro{
+                    background: $background-dark-pro;
+                    color: $font-extra-light;
+                    border-bottom: 3px solid $underline-pro;
+                    padding: 14px 20px;
+                    font-size: 1.2rem;
+                    border-radius: 8px 8px 0px 0px;
+                }
+                .details{
+                    color: $font-primary;
+                    ul{
+                        list-style-type: none;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    li{
+                        padding: 15px 20px;
+                        border-bottom: 0.5px solid $underline-border;
+                        font-size: 0.95rem;
+                    }
+                }
+                .compare{
+                    color : $font-heading;
+                    padding: 35px 20px 35px 20px;
+                }
+            }
+        }
+    }
+    .section-3{
+        color: $font-primary;
+        .compare-heading{
+            color: $font-heading;
+            text-align: center;
+            padding: 30px 80px;
+        }
+        table{
+            margin: 0 auto;
+            width: 80%;
+            tr{
+                border-bottom: 1.5px solid $underline-border;
+
+            }
+            tr:nth-child(1){
+                box-shadow: 0px 4px 4px $underline-border;
+            }
+            tr:hover{
+                color: black;
+                font-weight: bolder;
+                cursor: context-menu;
+                caret-color: black;
+            }
+            .lastRow {
+                border-bottom: 2px solid white;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+           }
+            tr:hover:not(.lastRow) {
+                border-bottom:2px solid rgb(48, 180, 224);
+           }
+           
+            th{
+                padding: 18px 20px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            th:nth-child(2){
+                background: $background-light;
+                text-align: center;
+                width: 20%;
+                border-left: 7px solid white;
+                border-right: 7px solid white;
+                box-shadow: 0px 4px 4px $underline-border;
+
+            }
+            th:nth-child(3){
+                background: $background-light-pro;
+                text-align: center;
+                width: 20%;
+                border-left: 7px solid white;
+                border-right: 7px solid white;
+                box-shadow: 0px 4px 4px $underline-border;
+
+            }
+            th:nth-child(4){
+                background: $background-light;
+                text-align: center;
+                width: 20%;
+                border-left: 7px solid white;
+                border-right: 7px solid white;
+                box-shadow: 0px 4px 4px $underline-border;
+
+            }
+            td{
+                padding: 18px 20px;
+            }
+            td:nth-child(2){
+                background: $background-light;
+                text-align: center;
+                width: 20%;
+                border-left: 7px solid white;
+                border-right: 7px solid white;
+            }
+            td:nth-child(3){
+                background: $background-light-pro;
+                text-align: center;
+                width: 20%;
+                border-left: 7px solid white;
+                border-right: 7px solid white;
+            }
+            td:nth-child(4){
+                background: $background-light;
+                text-align: center;
+                width: 20%;
+                border-left: 7px solid white;
+                border-right: 7px solid white;
+            }
+        }
+        .compare-table{
+            margin:auto;
+            padding-bottom: 80px;
+            .table-headings{
+                z-index: 3;
+            }
+            .tick{
+                color: $tick;
+                text-align: center;
+                font-weight: bold;
+            }
+            .colored{
+                color: $font-heading;
+            }
+            .help{
+                float: right;
+                margin: 0;
+                padding: 0;
+                color: black;
+                font-size: 20px;
+            }  
+            .help:hover{
+                color: $font-heading;
+            }
+            .tooltip{
+                position: relative;
+                display: inline-block;              
+            }
+            .tooltiptext{
+                visibility: hidden;
+                width: 1px;
+                background-color:$font-dark;
+                color:$font-light;
+                text-align: center;
+                padding: 5px 0;
+                border-radius: 6px;   
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -60px;
+                opacity: 0;
+                transition: opacity 0.3s;                 
+            }
+            .tooltiptext::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #555 transparent transparent transparent;
+            }           
+        }
+
+    }
+    .section-4{
+        margin: 0;
+        background: $background-dark;
+        text-align: center;
+        padding: 40px 60px 80px 60px;
+        p{
+            color: $font-heading;
+            font-family: $family-header;
+            font-size: 1.8em;
+        }
+        div{
+            color: $font-extra-light;
+        }
+    }
+    .extra-bold{
+        font-size: 3rem;
+        font-weight: 500;
+        letter-spacing: 3px;
+    }
+    .bold{
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+    .price{
+        color : $price;
+    }
+    .dark{
+        color: $font-dark;
+    }
+    .extra-light{
+        color: $font-light;
+    }
+    i[title]:hover::after{
+        background: black;
+    }
+}
